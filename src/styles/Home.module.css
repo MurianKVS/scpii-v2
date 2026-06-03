@@ -1,0 +1,197 @@
+/* src/styles/Home.module.css */
+
+/* ─── SALA ─────────────────────────────────────────────────────────────────── */
+.sala {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #0e0d0c;
+  position: relative;
+}
+
+.sala::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(255,240,200,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── PAREDE AREA ────────────────────────────────────────────────────────────── */
+.paredeArea {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: 48px 24px 16px;
+}
+
+/* ─── QUADRO ─────────────────────────────────────────────────────────────────── */
+.quadroMoldura {
+  /* Ocupa o espaço disponível com proporção 16:10 */
+  width: min(52vw, calc((100vh - 140px) * 1.6));
+  height: min(calc(52vw / 1.6), calc(100vh - 140px));
+  border: 12px solid #5a3e28;
+  outline: 2px solid #7a5535;
+  outline-offset: -6px;
+  border-radius: 3px;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.9),
+    0 8px 20px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+/* iframe sem scroll, escalado para caber no quadro */
+.quadroIframe {
+  /* Renderiza a v1 em viewport de 1280px e escala para caber */
+  width: 1280px;
+  height: 800px;
+  border: none;
+  transform-origin: top left;
+  /* scale = largura-real / 1280 — calculado dinamicamente via JS não é possível em CSS puro.
+     Usamos uma escala fixa conservadora; ajustar se necessário */
+  transform: scale(var(--iframe-scale, 0.72));
+  pointer-events: none;
+  overflow: hidden;
+  display: block;
+}
+
+/* ─── OVERLAY ────────────────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  z-index: 99;
+  cursor: pointer;
+}
+
+/* ─── QUADRO EXPANDIDO ───────────────────────────────────────────────────────── */
+.quadroExpandido {
+  position: fixed;
+  top: 4vh;
+  left: 4vw;
+  width: 92vw;
+  height: 92vh;
+  border: 12px solid #5a3e28;
+  outline: 2px solid #7a5535;
+  outline-offset: -6px;
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.95);
+}
+
+.quadroExpandidoIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.fecharBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.75);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fecharBtn:hover {
+  background: rgba(20,10,10,0.9);
+  color: #fff;
+}
+
+/* ─── NAVBAR / FOOTER DE POLAROIDS ──────────────────────────────────────────── */
+.navbar {
+  /* altura visível = só a margem que aparece antes do corte */
+  height: 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  padding: 0;
+  gap: 6px;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  overflow: visible; /* CRÍTICO */
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  padding: 0 8px;
+  margin: 0 auto;
+  min-width: 75vw;
+}
+
+/* ─── POLAROID ───────────────────────────────────────────────────────────────── */
+.pol {
+  background: #f0eadd;
+  /* padding: topo lateral base — base é a legenda embaixo da foto */
+  padding: 6px 6px 22px;
+  /* Cada polaroid ocupa fatia igual da largura total */
+  flex: 1 1 0;
+  /* Sem max-width — elas devem ser largas mesmo */
+  min-width: 0;
+  /* Corta o rodapé — só o topo da polaroid aparece */
+  margin-bottom: -110px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2,0.8,0.3,1), box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pol:hover {
+  transform: translateY(-100px) rotate(0deg) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  z-index: 20;
+}
+
+/* Quiz: desbotado, hover limitado */
+.polQuiz {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.polQuiz:hover {
+  transform: translateY(-24px) rotate(-2deg) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  z-index: 5;
+}
+
+.polIcon {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polLegenda {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  color: #444;
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

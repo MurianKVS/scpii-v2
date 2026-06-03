@@ -1,0 +1,274 @@
+/* src/styles/ODia.module.css */
+
+/* ─── PÁGINA GERAL ───────────────────────────────────────────────────────────── */
+.odiaPage {
+  background: #1a1008;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.odiaPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(160,100,30,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── VOLTAR ─────────────────────────────────────────────────────────────────── */
+.voltarBtn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  color: rgba(200,150,80,0.4);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.voltarBtn:hover { color: rgba(200,150,80,0.8); }
+
+/* ─── TABS ───────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.tab {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(200,150,80,0.2);
+  transition: background 0.3s;
+}
+
+.tabAtiva {
+  background: rgba(200,150,80,0.6);
+}
+
+/* ─── PERGAMINHO ─────────────────────────────────────────────────────────────── */
+.pagina {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(160deg, #f8f0d8 0%, #ede0b8 40%, #f0e4c4 100%);
+  border-radius: 2px 6px 6px 2px;
+  box-shadow:
+    -4px 0 8px rgba(0,0,0,0.3),
+    4px 4px 24px rgba(0,0,0,0.5),
+    inset -3px 0 6px rgba(0,0,0,0.08);
+  padding: 48px 52px;
+  min-height: 480px;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(140,90,30,0.2) transparent;
+}
+
+.pagina::-webkit-scrollbar { width: 4px; }
+.pagina::-webkit-scrollbar-thumb { background: rgba(140,90,30,0.25); border-radius: 2px; }
+
+/* Lombada */
+.pagina::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 32px;
+  background: linear-gradient(to right, rgba(140,90,30,0.13), transparent);
+  border-right: 1px solid rgba(140,90,30,0.12);
+  border-radius: 2px 0 99% 5%;
+  pointer-events: none;
+}
+
+/* Grain */
+.pagina::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ─── CAPA ───────────────────────────────────────────────────────────────────── */
+.capaWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 380px;
+  text-align: center;
+}
+
+.capaImg {
+  width: 160px;
+  border-radius: 2px;
+  opacity: 0.92;
+  box-shadow: 0 4px 16px rgba(80,50,10,0.25);
+}
+
+.capaOrnamento {
+  font-size: 13px;
+  color: rgba(100,65,20,0.3);
+  letter-spacing: 0.5em;
+}
+
+.capaLinha {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(100,65,20,0.25), transparent);
+}
+
+.capaTitulo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  color: rgba(80,50,15,0.55);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.capaSubtitulo {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(80,50,15,0.4);
+}
+
+/* ─── CAPÍTULO ───────────────────────────────────────────────────────────────── */
+.capHeader {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.capNum {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: rgba(100,65,20,0.45);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.capTitulo {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  color: rgba(60,35,10,0.8);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.capOrnamento {
+  font-size: 11px;
+  color: rgba(100,65,20,0.25);
+  letter-spacing: 0.4em;
+}
+
+.capTexto {
+  font-family: 'EB Garamond', serif;
+  font-size: 16.5px;
+  color: #2a1a08;
+  line-height: 1.85;
+}
+
+.capTexto p {
+  text-align: justify;
+  text-indent: 1.5em;
+  margin: 0 0 0.2em;
+}
+
+/* Letra capitular no primeiro parágrafo */
+.capTexto p:first-child {
+  text-indent: 0;
+}
+
+.capTexto p:first-child::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 6px 0 0;
+  color: rgba(80,50,10,0.7);
+}
+
+/* Numeração de página */
+.numPagina {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(100,65,20,0.3);
+  pointer-events: none;
+}
+
+/* ─── CONTRACAPA ─────────────────────────────────────────────────────────────── */
+.contracapaWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 380px;
+  text-align: center;
+}
+
+.contracapaTitulo {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: rgba(60,35,10,0.75);
+}
+
+/* ─── NAVEGAÇÃO ──────────────────────────────────────────────────────────────── */
+.navLivro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+  z-index: 2;
+}
+
+.navBtn {
+  border: 1px solid rgba(200,150,80,0.25);
+  border-radius: 2px;
+  padding: 7px 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  color: rgba(200,150,80,0.6);
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.navBtn:hover {
+  border-color: rgba(200,150,80,0.6);
+  color: rgba(200,150,80,0.95);
+}
+
+.navBtnHidden {
+  visibility: hidden;
+  pointer-events: none;
+}

@@ -1,0 +1,271 @@
+/* src/styles/Cartas.module.css */
+
+/* ───────────────────────────────
+   PÁGINA
+─────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: #1a0f08;
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(200,120,40,0.12), transparent 60%),
+    radial-gradient(ellipse at 20% 20%, rgba(180,100,40,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* ───────────────────────────────
+   HEADER
+─────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 32px 0;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  left: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  color: rgba(200,150,80,0.5);
+
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: rgba(200,150,80,0.8);
+}
+
+.title {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: rgba(230,190,120,0.85);
+}
+
+/* ───────────────────────────────
+   GRID
+─────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 36px 60px 48px;
+  margin-top: 64px;
+}
+
+/* ───────────────────────────────
+   ENVELOPE
+─────────────────────────────── */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.label {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(200,150,80,0.45);
+}
+
+.envelope {
+  min-height: 150px;
+  height: 250px;
+  width: 75%;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.envelope:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.55);
+}
+
+/* corpo */
+.body {
+  position: absolute;
+  inset: 0;
+}
+
+/* aba superior */
+.aba {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 158px;
+
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  opacity: 0.75;
+}
+
+/* dobras inferiores */
+.dobraEsq {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-bottom: 68px solid;
+  border-right: 80px solid transparent;
+
+  opacity: 0.4;
+}
+
+.dobraDir {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 0;
+  height: 0;
+
+  border-bottom: 68px solid;
+  border-left: 80px solid transparent;
+
+  opacity: 0.4;
+}
+
+/* lacre */
+.lacre {
+  position: absolute;
+  top: 25.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ───────────────────────────────
+   MODAL
+─────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.card {
+  background: #faf6ec;
+  border-radius: 4px;
+
+  padding: 32px 36px;
+  position: relative;
+
+  width: 100%;
+  max-width: 380px;
+
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+/* linhas de caderno */
+.lines {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  pointer-events: none;
+
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(180,160,120,0.18) 27px,
+    rgba(180,160,120,0.18) 28px
+  );
+}
+
+/* texto topo */
+.cardLabel {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+
+  color: rgba(100,70,30,0.45);
+  margin-bottom: 14px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* texto carta */
+.text {
+  font-family: 'Caveat', cursive;
+  font-size: 19px;
+  line-height: 1.85;
+  color: #3a2010;
+
+  white-space: pre-line;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* botão fechar */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: rgba(100,70,30,0.35);
+  z-index: 2;
+}
+
+/* ───────────────────────────────
+   RESPONSIVO
+─────────────────────────────── */
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}

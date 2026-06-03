@@ -1,0 +1,190 @@
+/* src/styles/Timemark.module.css */
+
+/* ─── PÁGINA ─────────────────────────────────────────────────────────────────── */
+.page {
+  background: #0e0d0c;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grain */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── VOLTAR ─────────────────────────────────────────────────────────────────── */
+.voltarBtn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  color: rgba(200, 180, 150, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.voltarBtn:hover {
+  color: rgba(200, 180, 150, 0.8);
+}
+
+/* ─── FASE 1 ─────────────────────────────────────────────────────────────────── */
+.fase1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dataEntrada {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 80px;
+  color: rgba(240, 235, 225, 0.92);
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 3;
+}
+
+.dataSegmento {
+  color: rgba(240, 235, 225, 0.92);
+}
+
+.dataSegmentoVazio {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dataSeparador {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── FASE 2 ─────────────────────────────────────────────────────────────────── */
+.fase2 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 2;
+}
+
+/* ─── LADO ESQUERDO ──────────────────────────────────────────────────────────── */
+.ladoEsquerdo {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px 60px 60px;
+  gap: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.celula {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.numero {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 48px;
+  color: rgba(240, 235, 225, 0.92);
+  line-height: 1;
+}
+
+.label {
+  font-family: 'EB Garamond', serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.separadorH {
+  width: 100%;
+  max-width: 400px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+}
+
+/* ─── DIVISOR VERTICAL ───────────────────────────────────────────────────────── */
+.divisorV {
+  width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coracao {
+  color: rgba(255, 182, 193, 0.35);
+  font-size: 12px;
+  background: #0e0d0c;
+  padding: 8px 0;
+  font-family: serif;
+}
+
+/* ─── LADO DIREITO ───────────────────────────────────────────────────────────── */
+.ladoDireito {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 60px 60px 40px;
+  gap: 10px;
+}
+
+.desdeLabel {
+  font-family: 'EB Garamond', serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.dataFinal {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 52px;
+  color: rgba(240, 235, 225, 0.92);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.dataFinalSep {
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 2px;
+}
+
+.desdeSubtitulo {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}

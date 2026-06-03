@@ -1,0 +1,44 @@
+.polaroid {
+    color: #444;
+    background: white;
+    padding: 10px 10px 25px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    transform: rotate(-3deg);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+}
+
+.polaroid .caption {
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+    color: #444;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+
+.foto-section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.foto-section1 .polaroid {
+    max-width: 300px;
+    max-height: auto;
+}

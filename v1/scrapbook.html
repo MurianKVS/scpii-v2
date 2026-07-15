@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😘</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/imgs.css">
+    <link rel="stylesheet" href="css/pag4.css">
+    <link rel="stylesheet" href="css/pag5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="intro">
+    <div class="introScrap">
+        <h1 class="introTitulo">Tá pronta?</h1>
+        <button class="startScrap" id="startScrap">Sim! 💙</button>
+    </div>
+    <div id="scrapCont" style="display: none;">
+        <div class="hand-line">
+            <svg width="100%" height="20" viewBox="0 0 100 2" preserveAspectRatio="none">
+                <path d="M0,1 C10,0 20,2 30,1 C40,0 50,2 60,1 C70,0 80,2 90,1 100,1"
+                        stroke="#fff" stroke-width="0.5" fill="none"/>
+            </svg>
+        </div>
+        <section class="scrapPage amor-def">
+            <div class="texto-amor">
+                <h2>Amor<span>(s.m)</span></h2>
+                <p>Sentimento de carinho e demonstração de afeto.<br>
+                É olhar juntos na mesma direção. A suprema felicidade da vida.<br>
+                É a força mais sutil do mundo.<br>
+                E eu te amo.</p>
+            </div>
+            <img src="images/tulipas.png" alt="flor" class="tulipas-laterais">
+        </section>
+        <section class="scrapPage tempo-pag">
+            <div class="polaroid">
+                <img src="images/f1.jpg" alt="">
+                <div class="caption" style="color: #fff;">12.01.2024</div>
+            </div>
+            <div class="corda-container">
+                <div class="linha-tempo" id="LinhaTempo">
+                    <div class="tempo-bloco topo">Anos<br><span id="anos">0</span></div>
+                    <div class="tempo-bloco topo">Meses<br><span id="meses">0</span></div>
+                    <div class="tempo-bloco topo">Dias<br><span id="dias">0</span></div>
+                    
+                    <svg class="linha-corda" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q25,0 50,5 T100,5" stroke="#ffffff" stroke-width="1.5" fill="transparent" />
+                    </svg>
+
+                    <div class="tempo-bloco baixo">Horas<br><span id="horas">0</span></div>
+                    <div class="tempo-bloco baixo">Minutos<br><span id="minutos">0</span></div>
+                    <div class="tempo-bloco baixo">Segundos<br><span id="segundos">0</span></div>
+                </div>
+            </div>
+            <div class="calendario-container">
+                <div class="calendario real">
+                    <div class="mes">Janeiro 2024</div>
+                    <div class="semana">
+                        <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                    </div>
+                    <div class="dias">
+                        <span class="vazio"></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span class="marcado" id="dia12">12</span><span>13</span>
+                        <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                        <span>28</span><span>29</span><span>30</span><span>31</span><span class="vazio"></span><span class="vazio"></span><span class="vazio"></span>
+                    </div>
+                </div>
+                <p class="frase-cal">E foi ai que eu que tô acostumado a ser indomável, acabei encontrando uma mina que é imprevisível. E justo eu, que nunca me prendi a nada, me vi querendo amanhecer com ela. ♡</p>
+                <img class="forever" src="images/forever.png" alt="">
+            </div>
+        </section>
+        <section class="scrapPage coracao-pren">
+            <div class="page3-container">
+                <div class="slider-section">
+                    <div class="slider-rail">
+                    </div>
+                    <input class="sliderVert" id="sliderCoracao" type="range" min="0" max="100" value="0">
+                    <div class="textos-slider">
+                        <div class="texto-slider" id="txtc3">Eu com você</div>
+                        <div class="texto-slider" id="txtc2">Eu quando falo com você</div>
+                        <div class="texto-slider" id="txtc1">Eu sem você</div>
+                    </div>
+                </div>
+
+                <div class="heart-section">
+                    <div class="heart-container">
+                        <svg viewBox="0 0 100 90" class="heart-svg">
+                            <defs>
+                                <linearGradient id="fillGrad" x1="0" y1="1" x2="0" y2="0">
+                                    <stop offset="0%" stop-color="#ff69b4"/>
+                                    <stop offset="100%" stop-color="#ffffff"/>
+                                </linearGradient>
+                                <clipPath id="heartClip">
+                                    <path d="M50 85 L15 50 A20 20 0 0 1 50 20 A20 20 0 0 1 85 50 Z"/>
+                                </clipPath>
+                            </defs>
+                            <path d="M50 85 L15 50 A20 20 0 0 1 50 20 A20 20 0 0 1 85 50 Z"
+                                fill="none" stroke="#ffb6c1" stroke-width="5"/>
+                            <rect id="heartFillRect" clip-path="url(#heartClip)"
+                                x="0" y="90" width="100" height="90"
+                                fill="url(#fillGrad)"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="foto-section1">
+                    <div class="polaroid">
+                        <img src="images/f2.png">
+                        <div class="caption">Os caracóis dos seus cabelos,<br>Única prisão que eu aceito me prender.</div>
+                </div>
+            </div>
+        </section>
+        <div class="hand-line">
+            <svg width="100%" height="20" viewBox="0 0 100 2" preserveAspectRatio="none">
+                <path d="M0,1 C10,0 20,2 30,1 C40,0 50,2 60,1 C70,0 80,2 90,1 100,1"
+                    stroke="#fff" stroke-width="0.5" fill="none"/>
+            </svg>
+        </div>
+        <section class="scrapPage exhibition-page">
+            <div class="frame-container">
+                <img src="images/vang/vang1.png" alt="Canto superior esquerdo" class="corner-image top-left">
+                <img src="images/vang/vang2.png" alt="Canto inferior direito" class="corner-image bottom-right">
+
+                <div class="frame-content-wrapper">
+                    <div class="frame-text left-column">
+                        <p>
+                            Amar-te é roçar o infinito com os dedos trêmulos da alma. Como escreveu Victor Hugo, “amar ou ter amado, isso basta; não se exige outra pérola aos esplendores da vida.” Há, em cada gesto de ternura, uma centelha do eterno — um eco daquilo que Platão concebeu como “o desejo de completar-se”, como se cada ser fosse a metade errante de um todo há muito perdido. Fernando Pessoa asseverou que “amar é pensar”; talvez por isso o amor resida tanto nos silêncios quanto nas palavras, tanto nos olhares quanto nas confissões da alma.
+                        </p>
+                    </div>
+                    <div class="main-display-area"> 
+                        <div class="main-display-image-container">
+                            <img src="images/vang/wmremove-transformed.png" alt="Imagem central do quadro">
+                        </div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1RMJOxR6GRPsBHL8qeC2ux?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="frame-text right-column">
+                        <p>
+                            Nietzsche advertia que “há sempre alguma loucura no amor, mas há sempre um pouco de razão na loucura”; e quem já amou profundamente sabe que o coração, com frequência, se precipita onde a razão vacila. Shakespeare ousava afirmar que “o amor não vê com os olhos, mas com a mente”, e eu, não menos audacioso, alinho-me a tal visão — pois somente assim há de se explicar meu fascínio por cada ínfimo detalhe teu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-plaque">
+                <p class="plaque-title">JE T'AIME MON AMOUR</p>
+                <p class="plaque-artist">O rapaz aí só amou o tal amarelo porque nunca teve a chance de apreciar o brilho dos seu olhos. 🌻</p>
+            </div>
+        </section>
+        <div class="hand-line quadro">
+            <svg width="100%" height="20" viewBox="0 0 100 2" preserveAspectRatio="none">
+                <path d="M0,1 C10,0 20,2 30,1 C40,0 50,2 60,1 C70,0 80,2 90,1 100,1"
+                    stroke="#fff" stroke-width="0.5" fill="none"/>
+            </svg>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

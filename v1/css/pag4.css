@@ -1,0 +1,234 @@
+.scrapPage.exhibition-page {
+    background-color: #1a1a1a; /* Cor de fundo do ambiente do quadro */
+    flex-direction: column; 
+    text-align: center;
+    padding: 80px 20px;
+    /* Adicionado para garantir que o conteúdo não cause scroll lateral */
+    width: 100%; 
+    box-sizing: border-box;
+    /* Alinha o conteúdo verticalmente ao topo da página, dando mais espaço abaixo do quadro */
+    justify-content: flex-start;
+    margin-top: -100px;
+}
+
+.frame-container {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Padrão para mobile */
+    align-items: center;
+    justify-content: center;
+    width: 90vw; /* Ajusta a largura para % da viewport */
+    max-width: 1100px; /* Limite máximo para telas grandes */
+    height: 80vh; /* Ajusta a altura para % da viewport - fará parecer uma pintura e se adaptar ao zoom */
+    min-height: 600px; /* Altura mínima para o quadro */
+    border: 20px solid #8B4513; /* Borda grossa para simular a moldura */
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 30px; 
+    background-color: #e4d7c7; /* Cor do fundo interno do quadro (bege claro) */
+    box-sizing: border-box;
+    margin: 40px auto; 
+    overflow: hidden; /* Importante para cortar o conteúdo que excede a borda */
+}
+
+@media (min-width: 768px) {
+    .frame-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 40px; /* Aumenta o padding interno para desktop */
+        height: 75vh; /* Ajuste para altura em desktop */
+        min-height: 650px; /* Altura mínima para o quadro em desktop */
+    }
+}
+
+.corner-image {
+    position: absolute;
+    height: auto;
+    z-index: 10;
+    pointer-events: none; /* Adiciona sombra para dar profundidade */
+}
+
+.corner-image.top-left {
+    top: -15px; /* Alinha com a borda superior do quadro */
+    left: -10px; /* Alinha com a borda esquerda do quadro */
+    width: 300px; /* Ajusta o tamanho da imagem de canto */
+}
+
+.corner-image.bottom-right {
+    bottom: 0; /* Alinha com a borda inferior do quadro */
+    right: 0; /* Alinha com a borda direita do quadro */
+    width: 300px; /* Ajusta o tamanho da imagem de canto */
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+}
+
+.frame-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Padrão para mobile */
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%; /* Ocupa 100% da altura disponível do frame-container */
+}
+
+@media (min-width: 768px) {
+    .frame-content-wrapper {
+        flex-direction: row;
+        justify-content: space-around; /* Distribui espaço entre as colunas */
+        align-items: stretch; /* Estica as colunas para preencher a altura */
+        flex-grow: 1;
+        width: 100%; /* Garante que ocupe a largura total */
+    }
+}
+
+.frame-text {
+    flex: 1;
+    font-size: 1.10rem; /* Aumenta o tamanho da fonte do texto */
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+    max-width: 380px; /* Aumenta a largura máxima para textos mais longos */
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: 'Roboto', sans-serif;
+    /* Alinha o texto com a borda do quadro */
+    margin: -20px; /* Remove margem lateral que estava em -10px */
+    padding: -50px; /* Adiciona padding interno para simular o alinhamento com a borda */
+}
+
+/* Ajustes de alinhamento para desktop */
+@media (min-width: 768px) {
+    .frame-text.left-column {
+        text-align: left;
+        margin-top: 60px;
+    }
+    .frame-text.right-column {
+        text-align: right;
+    }
+}
+
+.main-display-area { /* Área para a imagem central e Spotify Embed */
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e o player em coluna */
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; 
+    padding: 10px; /* Adiciona um pequeno padding interno */
+    width: 100%;
+    max-width: 450px; /* Limita a largura da área central */
+    height: 100%; /* Ocupa a altura disponível */
+    /*background-color: #D3D3D3; /* Fundo cinza claro para a área de exibição */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2); /* Sombra interna para efeito de tela */
+    box-sizing: border-box;
+}
+
+.main-display-image-container { /* Contêiner para a imagem central */
+    width: 100%;
+    height: auto; /* Altura automática baseada na imagem */
+    margin-bottom: 10px; /* Espaço entre a imagem e o player */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main-display-image-container img {
+    width: 100%;
+    height: auto; /* Garante que a imagem se ajuste e mantenha proporções */
+    display: block;
+    border-radius: 5px;
+    border: 2px solid #ccc; /* Uma pequena borda para a imagem */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para a imagem */
+}
+
+.main-display-area iframe { /* Estilo específico para o iframe do Spotify */
+    width: 85%; /* Ajusta a largura para ser menor que 100% do container */
+    height: 80px; /* Altura pequena para o player */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-top: 10px; /* Espaço entre a imagem e o player */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para o player */
+}
+
+
+/* Plaquinha de informações */
+.info-plaque {
+    background-color: #c5c1c1cc;
+    border: 2px dashed #ffffff;
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 350px;
+    width: 90%;
+    color: #5c5c5c;
+    font-family: 'Comic Neue', cursive;
+    box-sizing: border-box;
+    /* Ajustes para centralizar e mover para o meio */
+    margin: 50px auto; /* Centraliza horizontalmente e adiciona margem vertical */
+    z-index: 1; 
+}
+
+.info-plaque p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.plaque-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.plaque-artist, .plaque-date {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 767px) {
+    .frame-container {
+        padding: 20px;
+        border-width: 10px;
+        height: auto; /* Deixa a altura flexível em mobile */
+        min-height: 500px; /* Altura mínima para o quadro em mobile */
+    }
+
+    .corner-image {
+        width: 100px; /* Reduz o tamanho das imagens de canto em mobile */
+        top: -30px;
+        left: -30px;
+        transform: translate(-20%, -20%) rotate(-10deg);
+    }
+    .corner-image.bottom-right {
+        bottom: -30px;
+        right: -30px;
+        transform: translate(20%, 20%) rotate(10deg);
+    }
+
+    .frame-text {
+        font-size: 1rem;
+        text-align: left;
+        max-width: none;
+        margin: 0;
+        padding: 0 5px; /* Ajusta padding para textos em mobile */
+    }
+
+    .main-display-area {
+        padding: 10px;
+    }
+    .main-display-area iframe {
+        height: 80px; /* Altura menor para o Spotify embed em mobile */
+    }
+
+    .info-plaque {
+        margin: 30px auto; /* Ajusta margem da plaquinha em mobile */
+    }
+}
+
+.hand-line.quadro{
+    margin-top: -100px;
+}

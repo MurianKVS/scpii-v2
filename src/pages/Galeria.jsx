@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Masonry from 'react-masonry-css';
 import {
   IconArrowLeft,
+  IconPhotoCircle,
   IconLayoutGrid,
   IconStar,
   IconMoodSmile,
@@ -81,7 +82,8 @@ export default function Galeria() {
       <section className={styles.hero}>
         <button className={styles.voltarBtn} onClick={() => navigate('/')}>
           <IconArrowLeft size={18} />
-          voltar
+           voltar  
+          <IconPhotoCircle size={14}/>
         </button>
 
         <img src="/images/baleias/b1.png" alt="" className={`${styles.baleia} ${styles.baleiaB1}`} />

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { IconArrowLeft } from '@tabler/icons-react';
+import { IconArrowLeft, IconInfinity } from '@tabler/icons-react';
 import LightRays from '../components/LightRays/LightRays';
 import styles from '../styles/Timemark.module.css';
 
@@ -58,8 +58,9 @@ export default function Timemark() {
 
       {/* Botão voltar — sempre visível */}
       <button className={styles.voltarBtn} onClick={() => navigate('/')}>
-        <IconArrowLeft size={16} />
-        voltar
+        <IconArrowLeft size={18} />
+         voltar  
+        <IconInfinity size={14} />
       </button>
 
       <AnimatePresence>

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { IconArrowLeft } from '@tabler/icons-react';
+import { IconArrowLeft, IconFeather } from '@tabler/icons-react';
 import { paginas } from '../data/odia';
 import styles from '../styles/Odia.module.css';
 
@@ -98,8 +98,9 @@ export default function ODia() {
 
       {/* Botão voltar */}
       <button className={styles.voltarBtn} onClick={() => navigate('/')}>
-        <IconArrowLeft size={16} />
-        voltar
+        <IconArrowLeft size={18} />
+         voltar  
+        <IconFeather size={14} />
       </button>
 
       {/* Indicador de posição */}

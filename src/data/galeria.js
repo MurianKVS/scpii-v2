@@ -892,5 +892,11 @@ export const fotos = [
     "src": "/images/galeria/Snapchat-919858404.jpg",
     "tags": [],
     "favorita": false
-  }
+  },
+  {
+    "id": 151,
+    "src": "/images/galeria/c88d9a1e-29bf-4263-a1c1-27687fe1d674.jpg",
+    "tags": ['Idiota'],
+    "favorita": false
+  },
 ];

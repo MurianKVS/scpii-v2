@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Galeria from './pages/Galeria';
 import Frases from './pages/Frases';
+import DayPuzzle from './pages/DayPuzzle';
 import Timemark from './pages/Timemark';
 import Odia from './pages/Odia';
 import Cartas from './pages/Cartas';
@@ -32,7 +33,7 @@ export default function App() {
         <Route path="/galeria"     element={<Galeria />} />
         <Route path="/frases"      element={<Frases />} />
         <Route path="/timemark"    element={<Timemark />} />
-        <Route path="/love-metric" element={<Placeholder nome="Ta saindo.." />} />
+        <Route path="/daypuzzle"  element={<DayPuzzle />} />
         <Route path="/segredo"     element={<Placeholder nome="Galeria Secreta" />} />
         <Route path="/o-dia"       element={<Odia />} />
         <Route path="/cartas"      element={<Cartas />} />

@@ -4,19 +4,19 @@ import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  IconCamera, IconFeather, IconHeadphones, IconHourglass,
-  IconHeart, IconLock, IconSword, IconMail, IconHelp,
+  IconPhoto, IconFishHook, IconCalendarTime,
+  IconPuzzle, IconLock, IconNotebook, IconMail, IconHelp,
 } from '@tabler/icons-react';
 import styles from '../styles/Home.module.css';
 
 const POLAROIDS = [
-  { id: 'galeria',     label: 'Galeria',       icon: IconCamera,     bg: '#2a1e2e', color: 'rgba(255,182,193,0.85)', rotate: '-4deg',  route: '/galeria' },
-  { id: 'frases',      label: 'Frases fraseadas',      icon: IconFeather,    bg: '#1a1e30', color: 'rgba(120,198,247,0.85)', rotate: '2deg',   route: '/frases' },
-  { id: 'timemark',    label: 'Nosso tempo',       icon: IconHourglass,  bg: '#0d1520', color: 'rgba(100,160,255,0.85)', rotate: '5deg',   route: '/timemark' },
-  { id: 'love-metric', label: 'o quanto',      icon: IconHeart,      bg: '#28101a', color: 'rgba(255,100,150,0.85)', rotate: '-2deg',  route: '/love-metric' },
-  { id: 'segredo',     label: '✦ segredo',     icon: IconLock,       bg: '#0c0c10', color: 'rgba(160,140,255,0.65)', rotate: '3deg',   route: '/segredo' },
-  { id: 'o-dia',       label: 'O dia em que tudo começou..',      icon: IconSword,      bg: '#181008', color: 'rgba(200,160,70,0.85)',  rotate: '-6deg',  route: '/o-dia' },
+  { id: 'galeria',     label: 'Galeria',       icon: IconPhoto,     bg: '#2a1e2e', color: 'rgba(255,182,193,0.85)', rotate: '-4deg',  route: '/galeria' },
+  { id: 'frases',      label: 'Frases fraseadas',      icon: IconFishHook,    bg: '#1a1e30', color: 'rgba(120,198,247,0.85)', rotate: '2deg',   route: '/frases' },
+  { id: 'timemark',    label: 'Nosso tempo',       icon: IconCalendarTime,  bg: '#0d1520', color: 'rgba(100,160,255,0.85)', rotate: '5deg',   route: '/timemark' },
+  { id: 'daypuzzle', label: 'Day Puzzle',      icon: IconPuzzle,      bg: '#28101a', color: 'rgba(255,100,150,0.85)', rotate: '-2deg',  route: '/daypuzzle' },
+  { id: 'o-dia',       label: 'O dia em que tudo começou..',      icon: IconNotebook ,      bg: '#181008', color: 'rgba(200,160,70,0.85)',  rotate: '-6deg',  route: '/o-dia' },
   { id: 'cartas',      label: 'cartas',        icon: IconMail,       bg: '#180e0c', color: 'rgba(210,120,100,0.85)', rotate: '4deg',   route: '/cartas' },
+  { id: 'segredo',     label: '✦ segredo',     icon: IconLock,       bg: '#0c0c10', color: 'rgba(160,140,255,0.65)', rotate: '3deg',   route: '/segredo' },
   { id: 'quiz',        label: '1ª prova',      icon: IconHelp,       bg: '#111111', color: 'rgba(255,255,255,0.2)', rotate: '-2deg',  route: null },
 ];
 

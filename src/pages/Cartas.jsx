@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { IconArrowLeft, IconHeart, IconX } from '@tabler/icons-react';
+import { IconArrowLeft, IconMailHeart, IconHeart, IconX } from '@tabler/icons-react';
 import { cartas } from '../data/cartas';
 import styles from '../styles/Cartas.module.css';
 
@@ -15,8 +15,9 @@ export default function Cartas() {
     <div className={styles.page}>
       <div className={styles.header}>
         <button className={styles.back} onClick={() => navigate('/')}>
-          <IconArrowLeft size={16} />
-          voltar
+          <IconArrowLeft size={18} />
+           voltar  
+          <IconMailHeart size={14} />
         </button>
 
         <div className={styles.title}>Pra ler quando...</div>

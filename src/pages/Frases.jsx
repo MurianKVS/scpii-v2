@@ -62,9 +62,9 @@ export default function Frases() {
 
         {/* Voltar */}
         <button className={styles.voltarBtn} onClick={() => navigate('/')}>
-          <IconArrowLeft size={16} />
-          voltar
-          <IconAnchor size={13} />
+          <IconArrowLeft size={18} />
+           voltar  
+          <IconAnchor size={14} />
         </button>
 
         {/* Barco — z-index 3, na frente do SVG */}
